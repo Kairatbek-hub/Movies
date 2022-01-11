@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface SortAble {
 
-    void printAllMovies(List<Movies> movies);
+    void printAllMovies();
 
-    void findMovie(List<Movies> movies);
+    void findMovie(String movieName);
 
     void sortByYear(List<Movies> movies);
 

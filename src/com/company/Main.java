@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.List;
 import java.util.Scanner;
+import static java.lang.System.exit;
 
 public class Main {
     private static final List<Movies> movies = JsonIO.getMovies();
@@ -10,11 +11,62 @@ public class Main {
     private static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) throws InputException {
-//        while (true) {
-//            start();
-//        }
+        commads();
+        while (true) {
+            start();
+        }
     }
 
+    private static void start() {
+        Scanner scanner = new Scanner(System.in);
+        int birSan;
+        birSan = in.nextInt();
+        switch (birSan) {
+            case 1:
+                s.printAllMovies();
+                break;
+            case 2:
+                System.out.println("Write movie name:");
+                String movieName = scanner.nextLine();
+                s.findMovie(movieName);
+                break;
+            case 3:
+                s.sortByYear(movies);
+                break;
+            case 4:
+                s.sortByName(movies);
+                break;
+            case 5:
+                s.sortByDirector(movies);
+                break;
+            case 6:
+                System.out.println("Write actor name:");
+                String actorName = scanner.nextLine();
+                f.findMoviesByActor(actorName);
+                break;
+            case 7:
+                System.out.println("Write director name:");
+                String directorName = scanner.nextLine();
+                f.findMoviesByDirector(directorName);
+                break;
+            case 8:
+                System.out.println("Write movie year:");
+                int year = scanner.nextInt();
+                f.findMoviesByYear(year);
+                break;
+            case 9:
+                System.out.println("Write actor name to know his role and movie:");
+                String actor = scanner.nextLine();
+                f.findMoviesAndRoleByActor(actor);
+                break;
+            case 10:
+                f.showActorsAndRolesAndSortByActor();
+                break;
+            default:
+                System.out.println("Error! Number is not correct");
+                exit(0);
+        }
+    }
 
     static void commads() {
         System.out.println("--------------Commands-----------------------");

@@ -1,16 +1,15 @@
 package com.company;
 
-import java.util.List;
 
 public interface FindAble {
 
-    void findMoviesByActor(List<Movies> movies);
+    void findMoviesByActor(String actor);
 
-    void findMoviesByDirector(List<Movies> movies);
+    void findMoviesByDirector(String director);
 
-    void findMoviesByYear(List<Movies> movies, int name);
+    void findMoviesByYear(int year);
 
-    void findMoviesAndRoleByActor(List<Movies> movies);
+    void findMoviesAndRoleByActor(String actor);
 
-    void showActorRoles(List<Movies> movies);
+    void showActorsAndRolesAndSortByActor();
 }
